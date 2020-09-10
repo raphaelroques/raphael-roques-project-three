@@ -247,7 +247,7 @@ body {
 .wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  width: 70%;
+  width: 90%;
 }
 
 img {
@@ -274,6 +274,16 @@ button {
   background: #232121;
   color: white;
   font-weight: 600;
+  -webkit-box-shadow: 0 9px #999;
+          box-shadow: 0 9px #999;
+}
+
+button:active {
+  background-color: #3e8e41;
+  -webkit-box-shadow: 0 5px #666;
+          box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 .digital {
@@ -333,6 +343,24 @@ main .page-container .image-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.pay-table-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pay-table-image {
+  position: absolute;
+  top: 110px;
+  left: 60px;
+  opacity: 0.8;
+  width: 90%;
 }
 
 .buttons-container {

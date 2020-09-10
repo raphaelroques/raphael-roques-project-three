@@ -10,7 +10,7 @@ body {
 .wrapper {
     max-width: 1080px;
     margin: 0 auto;
-    width:70%;
+    width:90%;
 }
 
 img {
@@ -37,6 +37,13 @@ button {
     background: #232121;
     color: white;
     font-weight: 600;
+    box-shadow: 0 9px #999;
+    &:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
 }
 
 .digital {
@@ -75,6 +82,19 @@ main {
         }
     }
 }
+.pay-table-container {
+    position: relative;
+    display: flex;
+    justify-content: center;;
+}
+.pay-table-image {
+    position: absolute;
+    top: 110px;
+    left: 60px;
+    opacity: 0.8;
+    width: 90%;
+}
+
 .buttons-container {
     padding: 50px 0 ;
     display: flex;

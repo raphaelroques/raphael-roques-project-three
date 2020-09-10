@@ -9,7 +9,8 @@ const images = [
     './images/image7.jpg',
     './images/image8.jpg',
     './images/image9.jpg',
-    './images/image10.jpg'
+    './images/image10.jpg',
+    './images/image11.jpg'
     
 ];
 
@@ -20,16 +21,26 @@ var sound4 = new Audio('./audio/sound4.mp3');
 
 
 
-let credits = 2;
+let credits = 1;
 let round = 0;
   
 $('.page-container').hide();  
 $('.btn-stop').hide();
+$('.pay-table-image').hide();
   
   $(document).ready(function(){
 
     // display the credits
     $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+
+
+
+    $('.pay-table-btn').on('click',function(){
+      $('.pay-table-image').toggle()
+
+    })
+
+
 
     $('.btn-play').on('click',function(){
       $('.welcome').hide();
@@ -40,7 +51,7 @@ $('.btn-stop').hide();
         credits--;
         round++;
 
-      $('.btn-round-container').html(`<button class="btn-round"></button>`);
+      $('.btn-round-container').html(`<p class="btn-round"></p>`);
       $('.btn-round').html(`ROUND: <span class="digital">${round}</span>`);
       $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
 
@@ -52,18 +63,21 @@ $('.btn-stop').hide();
   
     });
 
+
+
+
     $('.btn-stop').click(function(){
       $('.btn-play').show();
       $('.btn-stop').hide();
       
 
-      let image_url_1 = images[Math.floor(Math.random() * 10)];
+      let image_url_1 = images[Math.floor(Math.random() * 11)];
       $('#random-image-1').attr('src',image_url_1);
       
-      let image_url_2 = images[Math.floor(Math.random() * 10)];
+      let image_url_2 = images[Math.floor(Math.random() * 11)];
       $('#random-image-2').attr('src',image_url_2);
   
-      let image_url_3 = images[Math.floor(Math.random() * 10)];
+      let image_url_3 = images[Math.floor(Math.random() * 11)];
       $('#random-image-3').attr('src',image_url_3);
   
 
@@ -71,55 +85,57 @@ $('.btn-stop').hide();
         credits+=15;
         sound4.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-        $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">15</span></button>`)
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">15</span></p>`)
       } else if (image_url_1===image_url_2 && image_url_1===image_url_3){
         credits+=10;
         sound3.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-        $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">10</span></button>`);
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">10</span></p>`);
       } else if (image_url_1===image_url_2 && image_url_1===images[8] || image_url_2===image_url_3 && image_url_2===images[8] || image_url_1===image_url_3 && image_url_1===images[8]){
         credits+=5;
         sound2.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-        $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">05</span></button>`);
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">05</span></p>`);
       } else if (image_url_1===image_url_2 || image_url_1===image_url_3 || image_url_2===image_url_3){
         credits+=2;
         sound1.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-        $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">02</span></button>`);
-      // } else if (image_url_1===images[8] || image_url_2===images[8] || image_url_3===images[8]){
-      //   credits++;
-      //   $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-      //   $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">01</span></button>`);
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`);
+      } else if (image_url_1===images[8] || image_url_2===images[8] || image_url_3===images[8]){
+        credits++;
+        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">01</span></p>`);
       } else {
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
-        $('.btn-paid-container').html(`<button class='btn-paid'>WINNER PAID: <span class="digital">00</span></button>`);
+        $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">00</span></p>`);
       } 
       
       
       if(credits === 0 ){
-        credits +=2;
+        credits +=1;
         $('.btn-play').hide();
         $('.btm-stop').hide();
         // CODE A REVOIR !!!!!!!
-        $('.welcome').html(`<h2>GAME OVER</h2>`).show();
-        $('.welcome').html(`<button class='btn-addCredits'>BUY MORE CREDITS</button>`).on('click', function(){
+        $('.welcome').append(`<h2 class='game-over'>GAME OVER</h2>`).show();
+        $('.welcome').append(`<button class='btn-addCredits'>BUY MORE CREDITS</button>`).on('click', function(){
           $('.btn-addCredits').hide();
-          console.log(`check1 ${credits}`)
-          
-          console.log(`check2 ${credits}`)
+          $('.game-over').hide();
+          $('.welcome-image').hide();
+
+         
+        
           $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
           $('.btn-play').show();
-          console.log(`check3 ${credits}`)
+          
         });
-        console.log(`check4 ${credits}`)
+        
       };
-      console.log(`check5 ${credits}`)
+      
 
 
       
     });
-    console.log(`check6 ${credits}`)
+    
 
     
 
