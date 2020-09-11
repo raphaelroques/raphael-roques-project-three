@@ -38,10 +38,11 @@ button {
     background: #232121;
     color: white;
     font-weight: 600;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 3px rgb(31, 31, 31);
+    margin: 50px 0;
     &:active {
-        background-color: #3e8e41;
-        box-shadow: 0 5px #666;
+        background-color: #393a39;
+        box-shadow: 0 5px  rgb(31, 31, 31);
         transform: translateY(4px);
       }
 
@@ -54,11 +55,8 @@ button {
 }
 // header
 header {
-    height: 400px;
-    // background: #2F2C2C;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.363), rgba(131, 131, 131, 0.26)), url(../images/header.png);
-    background-position: center;
-    background-size: cover;
+    height: 25vh;
+    background: #2F2C2C;
     color: white;
     display: flex;
     justify-content: center;
@@ -69,16 +67,15 @@ header {
 }
 // main
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 70vh;
+    min-height: 1050px;
     background: #343131;
     .page-container {
         display: flex;
         justify-content: space-between;
-        padding: 75px 0 50px;
+        // padding: 75px 0 50px;
         .image-container {
-            width: 30%;
+            width: 33%;
             display: flex;
         }
     }
@@ -90,16 +87,15 @@ main {
 }
 .pay-table-image {
     position: absolute;
-    top: 110px;
-    left: 60px;
-    // opacity: 0.9;
-    width: 90%;
+    top: 200px;
+    left: 0;
+    width: 100%;
 }
 
 .buttons-container {
-    padding: 50px 0 ;
     display: flex;
     justify-content: center;
+    align-items: center;
     button {
         width: 100%;
     }
@@ -117,6 +113,7 @@ main {
     div {
         
         width: 200px;
+        height: 200px;
         p {
             width: 100%;
             height: 200px;
@@ -136,19 +133,22 @@ main {
         border-radius: 10px;
     }
 }
-
 .welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
-
+    img {
+        margin: 150px 0;  
+    }
+    .btn-addCredits {
+        width: 100%;
+    }
 }
 // footer
 footer {
     width: 100%;
-    height: 75px;
+    height: 5vh;
     background: linear-gradient(rgba(0, 0, 0, 0.876), rgba(19, 18, 18, 0.863));
     color: white;
     display: flex;

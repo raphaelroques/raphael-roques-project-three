@@ -20,11 +20,8 @@ var sound3 = new Audio('./audio/sound3.mp3');
 var sound4 = new Audio('./audio/sound4.mp3');
 var sound5 = new Audio('./audio/sound5.mp3');
 
-
-
 let credits = 1;
 let round = 0;
-
 
 $('.volume-off').hide();
 $('.volume-on').on('click',function(){
@@ -47,13 +44,28 @@ $('.volume-off').on('click',function(){
   sound5.muted = false;
 });
 
+$('.buttons-container').hide();
+$('.score-container').hide();
+$('.pay-table-container').hide();
 
-  
+
 $('.page-container').hide();  
 $('.btn-stop').hide();
 $('.pay-table-image').hide();
   
   $(document).ready(function(){
+
+    $('.start').on('click',function(){
+      $('.welcome').hide();
+      $('.buttons-container').show();
+      $('.score-container').show();
+      $('.pay-table-container').show();
+      $('.start').hide();
+      $('.page-container').show();
+      $('#random-image-1').attr('src','./images/image9.jpg');
+      $('#random-image-2').attr('src','./images/image9.jpg');
+      $('#random-image-3').attr('src','./images/image9.jpg');
+    })
 
     // display the credits
     $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
@@ -69,7 +81,7 @@ $('.pay-table-image').hide();
 
     $('.btn-play').on('click',function(){
       $('.welcome').hide();
-      $('.page-container').show();
+      // $('.page-container').show();
       $('.btn-play').hide();
       $('.btn-stop').show();
         
@@ -143,12 +155,13 @@ $('.pay-table-image').hide();
         $('.btm-stop').hide();
         $('.buttons-container').hide();
         // CODE A REVOIR !!!!!!!
-        $('.welcome').append(`<h2 class='game-over'>GAME OVER</h2>`).show();
+        // $('.welcome').append(`<h2 class='game-over'>GAME OVER</h2>`).show();
         $('.welcome-image').hide();
-        $('.welcome').append(`<button class='btn-addCredits'>BUY MORE CREDITS</button>`).on('click', function(){
+        $('.welcome').append(`<button class='btn-addCredits'> GAME OVER BUY MORE CREDITS</button>`).show().on('click', function(){
           $('.btn-addCredits').hide();
           $('.game-over').hide();
           $('.buttons-container').show();
+          $('.welcome').hide();
           
 
          
