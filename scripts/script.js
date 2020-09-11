@@ -56,7 +56,7 @@ $('.pay-table-image').hide();
   $(document).ready(function(){
 
     // display the credits
-    $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+    $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
 
 
 
@@ -78,7 +78,7 @@ $('.pay-table-image').hide();
 
       $('.btn-round-container').html(`<p class="btn-round"></p>`);
       $('.btn-round').html(`ROUND: <span class="digital">${round}</span>`);
-      $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+      $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
 
       $('#random-image-1').attr('src','./images/gif1.gif');
       $('#random-image-2').attr('src','./images/gif2.gif');
@@ -109,30 +109,30 @@ $('.pay-table-image').hide();
       if (image_url_1===image_url_2 && image_url_1===image_url_3 && image_url_1===images[8]){
         credits+=15;
         sound5.play();
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">15</span></p>`)
       } else if (image_url_1===image_url_2 && image_url_1===image_url_3){
         credits+=10;
         sound4.play();
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">10</span></p>`);
       } else if (image_url_1===image_url_2 && image_url_1===images[8] || image_url_2===image_url_3 && image_url_2===images[8] || image_url_1===image_url_3 && image_url_1===images[8]){
         credits+=5;
         sound3.play();
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">05</span></p>`);
       } else if (image_url_1===image_url_2 || image_url_1===image_url_3 || image_url_2===image_url_3){
         credits+=2;
         sound2.play();
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`);
       } else if (image_url_1===images[8] || image_url_2===images[8] || image_url_3===images[8]){
         credits++;
         sound1.play();
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">01</span></p>`);
       } else {
-        $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+        $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">00</span></p>`);
       } 
       
@@ -141,19 +141,24 @@ $('.pay-table-image').hide();
         credits +=1;
         $('.btn-play').hide();
         $('.btm-stop').hide();
+        $('.buttons-container').hide();
         // CODE A REVOIR !!!!!!!
         $('.welcome').append(`<h2 class='game-over'>GAME OVER</h2>`).show();
+        $('.welcome-image').hide();
         $('.welcome').append(`<button class='btn-addCredits'>BUY MORE CREDITS</button>`).on('click', function(){
           $('.btn-addCredits').hide();
           $('.game-over').hide();
-          $('.welcome-image').hide();
+          $('.buttons-container').show();
+          
 
          
         
-          $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
+          $('.btn-credits').html(`<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`);
           $('.btn-play').show();
           
         });
+
+       
         
       };
       
