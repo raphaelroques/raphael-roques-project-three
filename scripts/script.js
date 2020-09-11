@@ -24,6 +24,30 @@ var sound5 = new Audio('./audio/sound5.mp3');
 
 let credits = 1;
 let round = 0;
+
+
+$('.volume-off').hide();
+$('.volume-on').on('click',function(){
+  $('.volume-on').hide();
+  $('.volume-off').show();
+  sound1.muted = true;
+  sound2.muted = true;
+  sound3.muted = true;
+  sound4.muted = true;
+  sound5.muted = true;
+});
+
+$('.volume-off').on('click',function(){
+  $('.volume-off').hide();
+  $('.volume-on').show();
+  sound1.muted = false;
+  sound2.muted = false;
+  sound3.muted = false;
+  sound4.muted = false;
+  sound5.muted = false;
+});
+
+
   
 $('.page-container').hide();  
 $('.btn-stop').hide();
