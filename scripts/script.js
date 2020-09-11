@@ -18,6 +18,7 @@ var sound1 = new Audio('./audio/sound1.mp3');
 var sound2 = new Audio('./audio/sound2.mp3');
 var sound3 = new Audio('./audio/sound3.mp3');
 var sound4 = new Audio('./audio/sound4.mp3');
+var sound5 = new Audio('./audio/sound5.mp3');
 
 
 
@@ -83,26 +84,27 @@ $('.pay-table-image').hide();
 
       if (image_url_1===image_url_2 && image_url_1===image_url_3 && image_url_1===images[8]){
         credits+=15;
-        sound4.play();
+        sound5.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">15</span></p>`)
       } else if (image_url_1===image_url_2 && image_url_1===image_url_3){
         credits+=10;
-        sound3.play();
+        sound4.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">10</span></p>`);
       } else if (image_url_1===image_url_2 && image_url_1===images[8] || image_url_2===image_url_3 && image_url_2===images[8] || image_url_1===image_url_3 && image_url_1===images[8]){
         credits+=5;
-        sound2.play();
+        sound3.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">05</span></p>`);
       } else if (image_url_1===image_url_2 || image_url_1===image_url_3 || image_url_2===image_url_3){
         credits+=2;
-        sound1.play();
+        sound2.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`);
       } else if (image_url_1===images[8] || image_url_2===images[8] || image_url_3===images[8]){
         credits++;
+        sound1.play();
         $('.btn-credits').html(`YOUR CREDITS: <span class="digital">${credits}</span>`);
         $('.btn-paid-container').html(`<p class='btn-paid'>WINNER PAID: <span class="digital">01</span></p>`);
       } else {
