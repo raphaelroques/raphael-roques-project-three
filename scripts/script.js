@@ -36,8 +36,7 @@ myGame.starter = function () {
   $(".pay-table-image").hide();
 };
 
-
-myGame.volume = function(){
+myGame.volume = function () {
   myGame.muted = function () {
     $(".volume-on").on("click", function () {
       $(".volume-on").hide();
@@ -62,7 +61,7 @@ myGame.volume = function(){
     });
   };
   myGame.unmuted();
-}
+};
 
 myGame.displayGame = function () {
   $(".btn-credits").html(
@@ -78,9 +77,9 @@ myGame.displayGame = function () {
     $(".pay-table-container").show();
     $(".start").hide();
     $(".page-container").show();
-    $("#random-image-1").attr("src", "./images/image9.jpg");
-    $("#random-image-2").attr("src", "./images/image9.jpg");
-    $("#random-image-3").attr("src", "./images/image9.jpg");
+    $("#random-image-1").attr("src", myGame.images[8]);
+    $("#random-image-2").attr("src", myGame.images[8]);
+    $("#random-image-3").attr("src", myGame.images[8]);
   });
 };
 
