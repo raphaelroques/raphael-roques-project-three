@@ -36,29 +36,33 @@ myGame.starter = function () {
   $(".pay-table-image").hide();
 };
 
-myGame.muted = function () {
-  $(".volume-on").on("click", function () {
-    $(".volume-on").hide();
-    $(".volume-off").show();
-    sound1.muted = true;
-    sound2.muted = true;
-    sound3.muted = true;
-    sound4.muted = true;
-    sound5.muted = true;
-  });
-};
 
-myGame.unmuted = function () {
-  $(".volume-off").on("click", function () {
-    $(".volume-off").hide();
-    $(".volume-on").show();
-    sound1.muted = false;
-    sound2.muted = false;
-    sound3.muted = false;
-    sound4.muted = false;
-    sound5.muted = false;
-  });
-};
+myGame.volume = function(){
+  myGame.muted = function () {
+    $(".volume-on").on("click", function () {
+      $(".volume-on").hide();
+      $(".volume-off").show();
+      sound1.muted = true;
+      sound2.muted = true;
+      sound3.muted = true;
+      sound4.muted = true;
+      sound5.muted = true;
+    });
+  };
+  myGame.muted();
+  myGame.unmuted = function () {
+    $(".volume-off").on("click", function () {
+      $(".volume-off").hide();
+      $(".volume-on").show();
+      sound1.muted = false;
+      sound2.muted = false;
+      sound3.muted = false;
+      sound4.muted = false;
+      sound5.muted = false;
+    });
+  };
+  myGame.unmuted();
+}
 
 myGame.displayGame = function () {
   $(".btn-credits").html(
@@ -212,8 +216,7 @@ myGame.stopReels = function () {
 
 myGame.init = function () {
   myGame.starter();
-  myGame.muted();
-  myGame.unmuted();
+  myGame.volume();
   myGame.displayGame();
   myGame.spinReels();
   myGame.stopReels();
