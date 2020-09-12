@@ -59,6 +59,12 @@ const unmuted = function () {
 };
 
 const displayGame = function () {
+  $(".btn-credits").html(
+    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
+  );
+  $(".pay-table-btn").on("click", function () {
+    $(".pay-table-image").toggle();
+  });
   $(".start").on("click", function () {
     $(".welcome").hide();
     $(".buttons-container").show();
@@ -213,12 +219,4 @@ myGame.init = function () {
 
 $(document).ready(function () {
   myGame.init();
-
-  $(".btn-credits").html(
-    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
-  );
-
-  $(".pay-table-btn").on("click", function () {
-    $(".pay-table-image").toggle();
-  });
 });
