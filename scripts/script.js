@@ -1,7 +1,7 @@
 const myGame = {};
 
 //create an array to hold all random image urls
-const images = [
+myGame.images = [
   "./images/image1.jpg",
   "./images/image2.jpg",
   "./images/image3.jpg",
@@ -101,19 +101,19 @@ const stopReels = function () {
     $(".btn-play").show();
     $(".btn-stop").hide();
 
-    let image_url_1 = images[Math.floor(Math.random() * 11)];
+    let image_url_1 = myGame.images[Math.floor(Math.random() * 11)];
     $("#random-image-1").attr("src", image_url_1);
 
-    let image_url_2 = images[Math.floor(Math.random() * 11)];
+    let image_url_2 = myGame.images[Math.floor(Math.random() * 11)];
     $("#random-image-2").attr("src", image_url_2);
 
-    let image_url_3 = images[Math.floor(Math.random() * 11)];
+    let image_url_3 = myGame.images[Math.floor(Math.random() * 11)];
     $("#random-image-3").attr("src", image_url_3);
 
     if (
       image_url_1 === image_url_2 &&
       image_url_1 === image_url_3 &&
-      image_url_1 === images[8]
+      image_url_1 === myGame.images[8]
     ) {
       credits += 15;
       sound5.play();
@@ -133,9 +133,9 @@ const stopReels = function () {
         `<p class='btn-paid'>WINNER PAID: <span class="digital">10</span></p>`
       );
     } else if (
-      (image_url_1 === image_url_2 && image_url_1 === images[8]) ||
-      (image_url_2 === image_url_3 && image_url_2 === images[8]) ||
-      (image_url_1 === image_url_3 && image_url_1 === images[8])
+      (image_url_1 === image_url_2 && image_url_1 === myGame.images[8]) ||
+      (image_url_2 === image_url_3 && image_url_2 === myGame.images[8]) ||
+      (image_url_1 === image_url_3 && image_url_1 === myGame.images[8])
     ) {
       credits += 5;
       sound3.play();
@@ -159,9 +159,9 @@ const stopReels = function () {
         `<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`
       );
     } else if (
-      image_url_1 === images[8] ||
-      image_url_2 === images[8] ||
-      image_url_3 === images[8]
+      image_url_1 === myGame.images[8] ||
+      image_url_2 === myGame.images[8] ||
+      image_url_3 === myGame.images[8]
     ) {
       credits++;
       sound1.play();
