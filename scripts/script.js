@@ -41,11 +41,9 @@ myGame.volume = function () {
     $(".volume-on").on("click", function () {
       $(".volume-on").hide();
       $(".volume-off").show();
-      sound1.muted = true;
-      sound2.muted = true;
-      sound3.muted = true;
-      sound4.muted = true;
-      sound5.muted = true;
+      myGame.sounds.forEach((sound)=>{
+        sound.muted = true
+      });
     });
   };
   myGame.muted();
@@ -53,11 +51,9 @@ myGame.volume = function () {
     $(".volume-off").on("click", function () {
       $(".volume-off").hide();
       $(".volume-on").show();
-      sound1.muted = false;
-      sound2.muted = false;
-      sound3.muted = false;
-      sound4.muted = false;
-      sound5.muted = false;
+      myGame.sounds.forEach((sound)=>{
+        sound.muted = false
+      });
     });
   };
   myGame.unmuted();
