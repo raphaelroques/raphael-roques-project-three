@@ -1,3 +1,18 @@
+// palette
+
+// "Jet":"2b2a27",
+// "Dim Gray":"68685f",
+// "Red Crayola":"ff0a47",
+// "Laser Lemon":"fdff70",
+// "Cultured":"f7f7f7"
+
+
+$black: #2b2a27;
+$grey: #68685f;
+$red: #ff0a47;
+$pink: #fc208e;
+$white: #f7f7f7;
+
 @import "setup";
 
 html {
@@ -7,7 +22,7 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
-  color: white;
+  color: $white;
 }
 
 .wrapper {
@@ -33,46 +48,44 @@ button {
 }
 
 button {
-  border: 0;
+  border: 5px solid $red;
   font-family: Arial, Helvetica, sans-serif;
   width: 180px;
   height: 100px;
-  background: #232121;
-  color: white;
+  background: $black;
+  color: $white;
   font-weight: 600;
-  box-shadow: 0 3px rgb(31, 31, 31);
+  box-shadow: 0 3px $grey;
   margin: 50px 0;
 
   &:active {
-    background-color: #393a39;
-    box-shadow: 0 5px rgb(31, 31, 31);
+    border: 5px solid $pink;
+    background-color: $grey;
+    box-shadow: 0 5px $black;
     transform: translateY(4px);
   }
 }
 
-.digital {
-  font-family: "Orbitron";
-  font-size: 3rem;
-  color: rgb(238, 225, 149);
-}
-
 header {
   height: 25vh;
-  background: #2f2c2c;
-  color: white;
+  background: $black;
+  color: $white;
   display: flex;
   justify-content: center;
   align-items: center;
 
   h1 {
     text-align: center;
+    font-family: "Orbitron";
+    font-size: 5rem;
+    letter-spacing: 0.5px;
   }
 }
 
 main {
   height: 70vh;
   min-height: 1050px;
-  background: #343131;
+  background: $grey;
 
   .pay-table-container {
     position: relative;
@@ -108,8 +121,10 @@ main {
 
     .btn-stop,
     .btn-play {
-      border: 5px solid red;
+      border: 5px solid $red;
       border-radius: 10px;
+      font-family: "Orbitron";
+      letter-spacing: 5px;
     }
   }
 
@@ -135,12 +150,13 @@ main {
     align-items: center;
 
     div {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 125px;
 
       p {
         width: 100%;
-        height: 200px;
+        height: 125px;
+        line-height: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -148,15 +164,23 @@ main {
       }
     }
 
-    .btn-credits {
-      border: 5px solid lightgray;
-      border-radius: 10px;
-    }
-
+    .btn-credits,
     .btn-round,
     .btn-paid {
-      border: 5px solid rgb(2, 189, 96);
+      background-color: #dadad4;
+      color: $black;
+      border: 5px solid $black;
       border-radius: 10px;
+      font-weight: bold;
+
+      .digital {
+        font-family: "Orbitron";
+        font-weight: bolder;
+        font-size: 4rem;
+        color: $red;
+        text-shadow: -1px 0 $white, 0 1px $white, 1px 0 $white, 0 -1px $white;
+
+      }
     }
   }
 }
@@ -164,7 +188,7 @@ main {
 footer {
   width: 100%;
   height: 5vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.876), rgba(19, 18, 18, 0.863));
+  background: $black;
   color: white;
   display: flex;
   justify-content: center;
