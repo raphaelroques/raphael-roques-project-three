@@ -1,6 +1,6 @@
 const myGame = {};
 
-let credits = 1;
+let credits = 10;
 let round = 0;
 
 //create an array to hold all random image urls
@@ -84,7 +84,7 @@ myGame.spinReels = function () {
     $(".welcome").hide();
     $(".btn-play").hide();
     $(".btn-stop").show();
-    credits--;
+    credits-=2;
     round++;
     $(".btn-round-container").html(`<p class="btn-round"></p>`);
     $(".btn-round").html(`ROUND: <span class="digital">${round}</span>`);
@@ -116,61 +116,61 @@ myGame.stopReels = function () {
       image_url_1 === image_url_3 &&
       image_url_1 === myGame.images[8]
     ) {
-      credits += 15;
+      credits += 30;
       myGame.sounds[4].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
       $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">15</span></p>`
+        `<p class='btn-paid'>WINNER PAID: <span class="digital">30</span></p>`
       );
     } else if (image_url_1 === image_url_2 && image_url_1 === image_url_3) {
-      credits += 10;
+      credits += 20;
       myGame.sounds[3].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
       $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">10</span></p>`
+        `<p class='btn-paid'>WINNER PAID: <span class="digital">20</span></p>`
       );
     } else if (
       (image_url_1 === image_url_2 && image_url_1 === myGame.images[8]) ||
       (image_url_2 === image_url_3 && image_url_2 === myGame.images[8]) ||
       (image_url_1 === image_url_3 && image_url_1 === myGame.images[8])
     ) {
-      credits += 5;
+      credits += 6;
       myGame.sounds[2].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
       $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">05</span></p>`
+        `<p class='btn-paid'>WINNER PAID: <span class="digital">06</span></p>`
       );
     } else if (
       image_url_1 === image_url_2 ||
       image_url_1 === image_url_3 ||
       image_url_2 === image_url_3
     ) {
-      credits += 2;
+      credits += 4;
       myGame.sounds[1].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span>`
       );
       $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`
+        `<p class='btn-paid'>WINNER PAID: <span class="digital">04</span></p>`
       );
     } else if (
       image_url_1 === myGame.images[8] ||
       image_url_2 === myGame.images[8] ||
       image_url_3 === myGame.images[8]
     ) {
-      credits++;
+      credits+=2;
       myGame.sounds[0].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
       $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">01</span></p>`
+        `<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`
       );
     } else {
       $(".btn-credits").html(
@@ -182,7 +182,7 @@ myGame.stopReels = function () {
     }
 
     if (credits === 0) {
-      credits += 1;
+      credits += 10;
       $(".btn-play").hide();
       $(".btm-stop").hide();
       $(".buttons-container").hide();
