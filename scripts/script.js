@@ -1,6 +1,5 @@
 const myGame = {};
 
-
 //create an array to hold all random image urls
 const images = [
   "./images/image1.jpg",
@@ -25,7 +24,7 @@ const sound5 = new Audio("./audio/sound5.mp3");
 let credits = 1;
 let round = 0;
 
-const starter = function (){
+const starter = function () {
   $(".volume-off").hide();
   $(".buttons-container").hide();
   $(".score-container").hide();
@@ -33,22 +32,21 @@ const starter = function (){
   $(".page-container").hide();
   $(".btn-stop").hide();
   $(".pay-table-image").hide();
-}
-
-
-const muted = function(){
-  $(".volume-on").on("click", function () {
-  $(".volume-on").hide();
-  $(".volume-off").show();
-  sound1.muted = true;
-  sound2.muted = true;
-  sound3.muted = true;
-  sound4.muted = true;
-  sound5.muted = true;
-})
 };
 
-const unmuted = function(){
+const muted = function () {
+  $(".volume-on").on("click", function () {
+    $(".volume-on").hide();
+    $(".volume-off").show();
+    sound1.muted = true;
+    sound2.muted = true;
+    sound3.muted = true;
+    sound4.muted = true;
+    sound5.muted = true;
+  });
+};
+
+const unmuted = function () {
   $(".volume-off").on("click", function () {
     $(".volume-off").hide();
     $(".volume-on").show();
@@ -60,7 +58,7 @@ const unmuted = function(){
   });
 };
 
-const displayGame = function(){
+const displayGame = function () {
   $(".start").on("click", function () {
     $(".welcome").hide();
     $(".buttons-container").show();
@@ -72,51 +70,27 @@ const displayGame = function(){
     $("#random-image-2").attr("src", "./images/image9.jpg");
     $("#random-image-3").attr("src", "./images/image9.jpg");
   });
-}
-
-myGame.init = function(){
-  starter();
-  muted();
-  unmuted();
-  displayGame();
 };
 
-
-$(document).ready(function () {
-  myGame.init();
-
-
-  
-
-  // display the credits
-  $(".btn-credits").html(
-    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
-  );
-
-  $(".pay-table-btn").on("click", function () {
-    $(".pay-table-image").toggle();
-  });
-
+const spinReels = function () {
   $(".btn-play").on("click", function () {
     $(".welcome").hide();
-    // $('.page-container').show();
     $(".btn-play").hide();
     $(".btn-stop").show();
-
     credits--;
     round++;
-
     $(".btn-round-container").html(`<p class="btn-round"></p>`);
     $(".btn-round").html(`ROUND: <span class="digital">${round}</span>`);
     $(".btn-credits").html(
       `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
     );
-
     $("#random-image-1").attr("src", "./images/gif1.gif");
     $("#random-image-2").attr("src", "./images/gif2.gif");
     $("#random-image-3").attr("src", "./images/gif3.gif");
   });
+};
 
+const stopReels = function () {
   $(".btn-stop").click(function () {
     $(".btn-play").show();
     $(".btn-stop").hide();
@@ -225,5 +199,26 @@ $(document).ready(function () {
           $(".btn-play").show();
         });
     }
+  });
+};
+
+myGame.init = function () {
+  starter();
+  muted();
+  unmuted();
+  displayGame();
+  spinReels();
+  stopReels();
+};
+
+$(document).ready(function () {
+  myGame.init();
+
+  $(".btn-credits").html(
+    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
+  );
+
+  $(".pay-table-btn").on("click", function () {
+    $(".pay-table-image").toggle();
   });
 });
