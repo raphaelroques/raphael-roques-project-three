@@ -289,14 +289,14 @@ button:active {
 }
 
 .digital {
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   font-size: 3rem;
   color: #eee195;
 }
 
 header {
   height: 25vh;
-  background: #2F2C2C;
+  background: #2f2c2c;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
