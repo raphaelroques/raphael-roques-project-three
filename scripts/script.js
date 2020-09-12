@@ -1,5 +1,8 @@
 const myGame = {};
 
+let credits = 1;
+let round = 0;
+
 //create an array to hold all random image urls
 myGame.images = [
   "./images/image1.jpg",
@@ -23,10 +26,7 @@ myGame.sounds = [
   (sound5 = new Audio("./audio/sound5.mp3")),
 ];
 
-let credits = 1;
-let round = 0;
-
-const starter = function () {
+myGame.starter = function () {
   $(".volume-off").hide();
   $(".buttons-container").hide();
   $(".score-container").hide();
@@ -36,7 +36,7 @@ const starter = function () {
   $(".pay-table-image").hide();
 };
 
-const muted = function () {
+myGame.muted = function () {
   $(".volume-on").on("click", function () {
     $(".volume-on").hide();
     $(".volume-off").show();
@@ -48,7 +48,7 @@ const muted = function () {
   });
 };
 
-const unmuted = function () {
+myGame.unmuted = function () {
   $(".volume-off").on("click", function () {
     $(".volume-off").hide();
     $(".volume-on").show();
@@ -60,7 +60,7 @@ const unmuted = function () {
   });
 };
 
-const displayGame = function () {
+myGame.displayGame = function () {
   $(".btn-credits").html(
     `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
   );
@@ -80,7 +80,7 @@ const displayGame = function () {
   });
 };
 
-const spinReels = function () {
+myGame.spinReels = function () {
   $(".btn-play").on("click", function () {
     $(".welcome").hide();
     $(".btn-play").hide();
@@ -98,7 +98,7 @@ const spinReels = function () {
   });
 };
 
-const stopReels = function () {
+myGame.stopReels = function () {
   $(".btn-stop").click(function () {
     $(".btn-play").show();
     $(".btn-stop").hide();
@@ -211,12 +211,12 @@ const stopReels = function () {
 };
 
 myGame.init = function () {
-  starter();
-  muted();
-  unmuted();
-  displayGame();
-  spinReels();
-  stopReels();
+  myGame.starter();
+  myGame.muted();
+  myGame.unmuted();
+  myGame.displayGame();
+  myGame.spinReels();
+  myGame.stopReels();
 };
 
 $(document).ready(function () {
