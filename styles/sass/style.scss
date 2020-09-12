@@ -56,7 +56,6 @@ button {
   color: rgb(238, 225, 149);
 }
 
-// header
 header {
   height: 25vh;
   background: #2f2c2c;
@@ -70,101 +69,98 @@ header {
   }
 }
 
-// main
 main {
   height: 70vh;
   min-height: 1050px;
   background: #343131;
 
+  .pay-table-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .pay-table-image {
+      position: absolute;
+      top: 200px;
+      left: 0;
+      width: 100%;
+    }
+  }
+
   .page-container {
     display: flex;
     justify-content: space-between;
 
-    // padding: 75px 0 50px;
     .image-container {
       width: 33%;
       display: flex;
     }
   }
-}
 
-.pay-table-container {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.pay-table-image {
-  position: absolute;
-  top: 200px;
-  left: 0;
-  width: 100%;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  button {
-    width: 100%;
-  }
-
-  .btn-stop,
-  .btn-play {
-    border: 5px solid red;
-    border-radius: 10px;
-  }
-}
-
-.score-container {
-  padding: 25px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  div {
-    width: 200px;
-    height: 200px;
-
-    p {
+    button {
       width: 100%;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    }
+
+    .btn-stop,
+    .btn-play {
+      border: 5px solid red;
+      border-radius: 10px;
     }
   }
 
-  .btn-credits {
-    border: 5px solid lightgray;
-    border-radius: 10px;
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 150px 0;
+    }
+
+    .btn-addCredits {
+      width: 100%;
+    }
   }
 
-  .btn-round,
-  .btn-paid {
-    border: 5px solid rgb(2, 189, 96);
-    border-radius: 10px;
+  .score-container {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      width: 200px;
+      height: 200px;
+
+      p {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .btn-credits {
+      border: 5px solid lightgray;
+      border-radius: 10px;
+    }
+
+    .btn-round,
+    .btn-paid {
+      border: 5px solid rgb(2, 189, 96);
+      border-radius: 10px;
+    }
   }
 }
 
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    margin: 150px 0;
-  }
-
-  .btn-addCredits {
-    width: 100%;
-  }
-}
-
-// footer
 footer {
   width: 100%;
   height: 5vh;
