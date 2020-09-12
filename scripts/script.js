@@ -15,11 +15,13 @@ myGame.images = [
   "./images/image11.jpg",
 ];
 
-const sound1 = new Audio("./audio/sound1.mp3");
-const sound2 = new Audio("./audio/sound2.mp3");
-const sound3 = new Audio("./audio/sound3.mp3");
-const sound4 = new Audio("./audio/sound4.mp3");
-const sound5 = new Audio("./audio/sound5.mp3");
+myGame.sounds = [
+  (sound1 = new Audio("./audio/sound1.mp3")),
+  (sound2 = new Audio("./audio/sound2.mp3")),
+  (sound3 = new Audio("./audio/sound3.mp3")),
+  (sound4 = new Audio("./audio/sound4.mp3")),
+  (sound5 = new Audio("./audio/sound5.mp3")),
+];
 
 let credits = 1;
 let round = 0;
@@ -116,7 +118,7 @@ const stopReels = function () {
       image_url_1 === myGame.images[8]
     ) {
       credits += 15;
-      sound5.play();
+      myGame.sounds[4].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
@@ -125,7 +127,7 @@ const stopReels = function () {
       );
     } else if (image_url_1 === image_url_2 && image_url_1 === image_url_3) {
       credits += 10;
-      sound4.play();
+      myGame.sounds[3].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
@@ -138,7 +140,7 @@ const stopReels = function () {
       (image_url_1 === image_url_3 && image_url_1 === myGame.images[8])
     ) {
       credits += 5;
-      sound3.play();
+      myGame.sounds[2].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
@@ -151,7 +153,7 @@ const stopReels = function () {
       image_url_2 === image_url_3
     ) {
       credits += 2;
-      sound2.play();
+      myGame.sounds[1].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span>`
       );
@@ -164,7 +166,7 @@ const stopReels = function () {
       image_url_3 === myGame.images[8]
     ) {
       credits++;
-      sound1.play();
+      myGame.sounds[0].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
