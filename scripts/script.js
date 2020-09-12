@@ -41,8 +41,8 @@ myGame.volume = function () {
     $(".volume-on").on("click", function () {
       $(".volume-on").hide();
       $(".volume-off").show();
-      myGame.sounds.forEach((sound)=>{
-        sound.muted = true
+      myGame.sounds.forEach((sound) => {
+        sound.muted = true;
       });
     });
   };
@@ -51,8 +51,8 @@ myGame.volume = function () {
     $(".volume-off").on("click", function () {
       $(".volume-off").hide();
       $(".volume-on").show();
-      myGame.sounds.forEach((sound)=>{
-        sound.muted = false
+      myGame.sounds.forEach((sound) => {
+        sound.muted = false;
       });
     });
   };
@@ -186,8 +186,6 @@ myGame.stopReels = function () {
       $(".btn-play").hide();
       $(".btm-stop").hide();
       $(".buttons-container").hide();
-      // CODE A REVOIR !!!!!!!
-      // $('.welcome').append(`<h2 class='game-over'>GAME OVER</h2>`).show();
       $(".welcome-image").hide();
       $(".welcome")
         .append(
@@ -199,7 +197,6 @@ myGame.stopReels = function () {
           $(".game-over").hide();
           $(".buttons-container").show();
           $(".welcome").hide();
-
           $(".btn-credits").html(
             `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
           );
