@@ -65,6 +65,10 @@ myGame.displayGame = function () {
   );
   $(".pay-table-btn").on("click", function () {
     $(".pay-table-image").toggle();
+    $(".page-container").toggle();
+    $(".buttons-container").toggle();
+    $(".score-container").toggle();
+
   });
   $(".start").on("click", function () {
     $(".welcome").hide();
