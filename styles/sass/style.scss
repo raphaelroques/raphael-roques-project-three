@@ -60,12 +60,14 @@ button {
     box-shadow: 0 5px $black;
     transform: translateY(4px);
   }
+
   &.volume-on,
   &.volume-off {
     border-radius: 75px;
     font-size: 1.5rem;
     width: 90px;
   }
+
   &.volume-off {
     background-color: $grey;
   }
@@ -79,22 +81,20 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid $red;
 
   div {
     display: flex;
     justify-content: center;
-    background-color: $grey;
+    background-color: $black;
 
     h1 {
       text-align: center;
       font-family: "Orbitron";
+      letter-spacing: 4px;
       font-size: 3rem;
       padding: 25px 0;
-      width: 380px;
-      text-shadow: 2px 0 0 $black, -2px 0 0 $black, 0 2px 0 $black,
-        0 -2px 0 $black, 1px 1px 0 $black, -1px -1px 0 $black, 1px -1px 0 $black,
-        -1px 1px 0 $black, 1px 1px 5px $black;
-
+      width: 500px;
       span {
         color: $red;
         font-size: 5rem;
@@ -239,6 +239,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 2px solid $red;
 }
 
 @media (max-width: 600px) {
@@ -254,6 +255,7 @@ footer {
     min-height: 700px;
 
     .score-container {
+
       .btn-credits,
       .btn-round,
       .btn-paid {
@@ -290,6 +292,7 @@ footer {
     min-height: 600px;
 
     .score-container {
+
       .btn-credits,
       .btn-round,
       .btn-paid {

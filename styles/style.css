@@ -316,6 +316,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 2px solid #ff0a47;
 }
 
 header div {
@@ -325,16 +326,16 @@ header div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #68685f;
+  background-color: #2b2a27;
 }
 
 header div h1 {
   text-align: center;
   font-family: "Orbitron";
+  letter-spacing: 4px;
   font-size: 3rem;
   padding: 25px 0;
-  width: 380px;
-  text-shadow: 2px 0 0 #2b2a27, -2px 0 0 #2b2a27, 0 2px 0 #2b2a27, 0 -2px 0 #2b2a27, 1px 1px 0 #2b2a27, -1px -1px 0 #2b2a27, 1px -1px 0 #2b2a27, -1px 1px 0 #2b2a27, 1px 1px 5px #2b2a27;
+  width: 500px;
 }
 
 header div h1 span {
@@ -549,6 +550,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-top: 2px solid #ff0a47;
 }
 
 @media (max-width: 600px) {
