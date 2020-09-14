@@ -59,26 +59,48 @@ myGame.volume = function () {
   myGame.unmuted();
 };
 
-myGame.displayGame = function () {
-  $(".btn-credits").html(
-    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
-  );
+myGame.payTable = function () {
   $(".pay-table-btn").on("click", function () {
     $(".pay-table-image").toggle();
     $(".page-container").toggle();
     $(".buttons-container").toggle();
     $(".score-container").toggle();
+    $(".game-over-container").hide();
   });
+};
+
+myGame.start = function () {
   $(".start").on("click", function () {
     $(".welcome").hide();
+    $(".start").hide();
     $(".buttons-container").show();
     $(".score-container").show();
     $(".pay-table-container").show();
-    $(".start").hide();
     $(".page-container").show();
     $("#random-image-1").attr("src", myGame.images[8]);
     $("#random-image-2").attr("src", myGame.images[8]);
     $("#random-image-3").attr("src", myGame.images[8]);
+  });
+};
+
+myGame.displayGame = function () {
+  $(".btn-credits").html(
+    `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
+  );
+  myGame.payTable();
+  myGame.start();
+};
+
+myGame.addCredits = function () {
+  $(".btn-addCredits").on("click", function () {
+    $(".btn-addCredits").hide();
+    $(".game-over").hide();
+    $(".welcome").hide();
+    $(".buttons-container").show();
+    $(".btn-credits").html(
+      `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
+    );
+    $(".btn-play").show();
   });
 };
 
@@ -102,8 +124,8 @@ myGame.spinReels = function () {
 
 myGame.stopReels = function () {
   $(".btn-stop").click(function () {
-    $(".btn-play").show();
     $(".btn-stop").hide();
+    $(".btn-play").show();
 
     let image_url_1 = myGame.images[Math.floor(Math.random() * 11)];
     $("#random-image-1").attr("src", image_url_1);
@@ -190,17 +212,12 @@ myGame.stopReels = function () {
       $(".btm-stop").hide();
       $(".buttons-container").hide();
       $(".welcome-image").hide();
-      $(".welcome").append(`<div class='game-over-container'><p class='game-over'>GAME OVER</p><button class='btn-addCredits'>BUY MORE CREDITS</button></div>`).show()
-      $('.btn-addCredits').on("click", function () {
-        $(".btn-addCredits").hide();
-        $(".game-over").hide();
-        $(".buttons-container").show();
-        $(".welcome").hide();
-        $(".btn-credits").html(
-          `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
-        );
-        $(".btn-play").show();
-      });
+      $(".welcome")
+        .append(
+          `<div class='game-over-container'><p class='game-over'>GAME OVER</p><button class='btn-addCredits'>BUY MORE CREDITS</button></div>`
+        )
+        .show();
+      myGame.addCredits();
     }
   });
 };
