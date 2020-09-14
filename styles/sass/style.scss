@@ -60,6 +60,15 @@ button {
     box-shadow: 0 5px $black;
     transform: translateY(4px);
   }
+  &.volume-on,
+  &.volume-off {
+    border-radius: 75px;
+    font-size: 1.5rem;
+    width: 90px;
+  }
+  &.volume-off {
+    background-color: $grey;
+  }
 }
 
 header {

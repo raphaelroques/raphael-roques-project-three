@@ -292,6 +292,16 @@ button:active {
           transform: translateY(4px);
 }
 
+button.volume-on, button.volume-off {
+  border-radius: 75px;
+  font-size: 1.5rem;
+  width: 90px;
+}
+
+button.volume-off {
+  background-color: #68685f;
+}
+
 header {
   height: 20vh;
   min-height: 170px;

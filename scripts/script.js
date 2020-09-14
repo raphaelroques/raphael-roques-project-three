@@ -65,7 +65,7 @@ myGame.payTable = function () {
     $(".page-container").toggle();
     $(".buttons-container").toggle();
     $(".score-container").toggle();
-    $(".game-over-container").hide();
+    $(".game-over-container").toggle();
   });
 };
 
