@@ -222,14 +222,17 @@ myGame.stopReels = function () {
   });
 };
 
+
+
 myGame.init = function () {
-  myGame.starter();
   myGame.volume();
   myGame.displayGame();
   myGame.spinReels();
   myGame.stopReels();
 };
 
+myGame.starter();
 $(document).ready(function () {
+  
   myGame.init();
 });
