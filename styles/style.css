@@ -391,6 +391,10 @@ main .page-container .image-container {
   display: flex;
 }
 
+main .page-container img {
+  border: 2px solid #2b2a27;
+}
+
 main .buttons-container {
   display: -webkit-box;
   display: -ms-flexbox;

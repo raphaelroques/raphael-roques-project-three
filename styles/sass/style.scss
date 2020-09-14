@@ -131,6 +131,9 @@ main {
       width: 33%;
       display: flex;
     }
+    img {
+      border:2px solid $black;
+    }
   }
 
   .buttons-container {
