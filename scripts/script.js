@@ -190,24 +190,17 @@ myGame.stopReels = function () {
       $(".btm-stop").hide();
       $(".buttons-container").hide();
       $(".welcome-image").hide();
-      $(".welcome")
-        .append(
-          `<div class='game-over-container'>
-            <p class='game-over'>GAME OVER</p>
-            <button class='btn-addCredits'>BUY MORE CREDITS</button>
-          </div>`
-        )
-        .show()
-        .on("click", function () {
-          $(".btn-addCredits").hide();
-          $(".game-over").hide();
-          $(".buttons-container").show();
-          $(".welcome").hide();
-          $(".btn-credits").html(
-            `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
-          );
-          $(".btn-play").show();
-        });
+      $(".welcome").append(`<div class='game-over-container'><p class='game-over'>GAME OVER</p><button class='btn-addCredits'>BUY MORE CREDITS</button></div>`).show()
+      $('.btn-addCredits').on("click", function () {
+        $(".btn-addCredits").hide();
+        $(".game-over").hide();
+        $(".buttons-container").show();
+        $(".welcome").hide();
+        $(".btn-credits").html(
+          `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
+        );
+        $(".btn-play").show();
+      });
     }
   });
 };
