@@ -312,14 +312,16 @@ header div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #68685f;
 }
 
 header div h1 {
   text-align: center;
   font-family: "Orbitron";
   font-size: 3rem;
-  padding-top: 50px;
+  padding: 10px 0;
   width: 380px;
+  text-shadow: 2px 0 0 #2b2a27, -2px 0 0 #2b2a27, 0 2px 0 #2b2a27, 0 -2px 0 #2b2a27, 1px 1px 0 #2b2a27, -1px -1px 0 #2b2a27, 1px -1px 0 #2b2a27, -1px 1px 0 #2b2a27, 1px 1px 5px #2b2a27;
 }
 
 header div h1 span {
@@ -328,6 +330,7 @@ header div h1 span {
 }
 
 main {
+  min-height: 800px;
   background: #68685f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,7 +438,7 @@ main .score-container {
 }
 
 main .score-container div {
-  width: 300px;
+  width: 32%;
   height: 125px;
 }
 
@@ -493,4 +496,32 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.5rem;
+  }
+  main .score-container .btn-credits .digital,
+  main .score-container .btn-round .digital,
+  main .score-container .btn-paid .digital {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+  header div h1 {
+    font-size: 2.5rem;
+  }
+  header div h1 span {
+    font-size: 4rem;
+  }
+  main .score-container .btn-credits .digital,
+  main .score-container .btn-round .digital,
+  main .score-container .btn-paid .digital {
+    font-size: 2rem;
+  }
 }

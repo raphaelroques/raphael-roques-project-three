@@ -6,7 +6,6 @@
 // "Laser Lemon":"fdff70",
 // "Cultured":"f7f7f7"
 
-
 $black: #2b2a27;
 $grey: #68685f;
 $red: #ff0a47;
@@ -74,36 +73,41 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-    div {
-      display: flex;
-      justify-content: center;
-      h1 {
-        text-align: center;
-        font-family: "Orbitron";
-        font-size: 3rem;
-        padding-top: 50px;
-        width: 380px;
-        span {
-          color: $red;
-          font-size: 5rem;
-        }
+
+  div {
+    display: flex;
+    justify-content: center;
+    background-color: $grey;
+
+    h1 {
+      text-align: center;
+      font-family: "Orbitron";
+      font-size: 3rem;
+      padding: 10px 0;
+      width: 380px;
+      text-shadow: 2px 0 0 $black, -2px 0 0 $black, 0 2px 0 $black,
+        0 -2px 0 $black, 1px 1px 0 $black, -1px -1px 0 $black, 1px -1px 0 $black,
+        -1px 1px 0 $black, 1px 1px 5px $black;
+
+      span {
+        color: $red;
+        font-size: 5rem;
       }
     }
+  }
 }
 
 main {
-  // height: 80vh;
-  // min-height: 610px;
+  min-height: 800px;
   background: $grey;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
-
   .pay-table-container {
     // position: relative;
     display: flex;
-    flex-wrap: wrap;;
+    flex-wrap: wrap;
     justify-content: space-between;
     // overflow: initial;
 
@@ -166,7 +170,7 @@ main {
     align-items: center;
 
     div {
-      width: 300px;
+      width: 32%;
       height: 125px;
 
       p {
@@ -195,7 +199,6 @@ main {
         font-size: 4rem;
         color: $red;
         text-shadow: -1px 0 $white, 0 1px $white, 1px 0 $white, 0 -1px $white;
-
       }
     }
   }
@@ -210,4 +213,60 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 730px) {
+  main {
+    // height: ;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.5rem;
+  }
+
+  main {
+    .score-container {
+
+      .btn-credits,
+      .btn-round,
+      .btn-paid {
+        .digital {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header {
+    div {
+      h1 {
+        font-size: 2.5rem;
+
+        span {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  main {
+    .score-container {
+
+      .btn-credits,
+      .btn-round,
+      .btn-paid {
+        .digital {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
