@@ -222,8 +222,6 @@ myGame.stopReels = function () {
   });
 };
 
-
-
 myGame.init = function () {
   myGame.volume();
   myGame.displayGame();
@@ -233,6 +231,5 @@ myGame.init = function () {
 
 myGame.starter();
 $(document).ready(function () {
-  
   myGame.init();
 });

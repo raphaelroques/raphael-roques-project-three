@@ -281,6 +281,7 @@ button {
   -webkit-box-shadow: 0 3px #68685f;
           box-shadow: 0 3px #68685f;
   margin: 30px 0;
+  border-radius: 10px;
 }
 
 button:active {
@@ -292,6 +293,11 @@ button:active {
           transform: translateY(4px);
 }
 
+button:hover, button:focus {
+  border: 4px solid #dc326d;
+  background-color: #31312f;
+}
+
 button.volume-on, button.volume-off {
   border-radius: 75px;
   font-size: 2.5rem;
@@ -301,6 +307,18 @@ button.volume-on, button.volume-off {
 button.volume-off {
   background-color: #8d8d8b;
   color: #2b2a27;
+}
+
+button.btn-stop, button.btn-play {
+  height: 100px;
+  border-radius: 50px;
+  font-family: "Orbitron";
+  letter-spacing: 5px;
+  width: 75%;
+}
+
+button.btn-addCredits {
+  width: 40%;
 }
 
 header {
@@ -373,6 +391,7 @@ main .pay-table-container {
 main .pay-table-container .pay-table-image {
   width: 100%;
   margin-bottom: 50px;
+  border: 2px solid #ff0a47;
 }
 
 main .page-container {
@@ -405,19 +424,6 @@ main .buttons-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-main .buttons-container button {
-  width: 75%;
-}
-
-main .buttons-container .btn-stop,
-main .buttons-container .btn-play {
-  border: 2px solid #ff0a47;
-  height: 100px;
-  border-radius: 50px;
-  font-family: "Orbitron";
-  letter-spacing: 5px;
 }
 
 main .welcome {
@@ -476,10 +482,6 @@ main .welcome .game-over-container p {
   color: #f7f7f7;
   font-weight: 600;
   margin: 30px 0;
-  width: 40%;
-}
-
-main .welcome .game-over-container .btn-addCredits {
   width: 40%;
 }
 
@@ -556,6 +558,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   border-top: 2px solid #ff0a47;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 600px) {
