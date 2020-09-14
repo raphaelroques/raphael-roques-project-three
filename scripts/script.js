@@ -1,6 +1,6 @@
 const myGame = {};
 
-let credits = 10;
+let credits = 2;
 let round = 0;
 
 //create an array to hold all random image urls
@@ -68,7 +68,6 @@ myGame.displayGame = function () {
     $(".page-container").toggle();
     $(".buttons-container").toggle();
     $(".score-container").toggle();
-
   });
   $(".start").on("click", function () {
     $(".welcome").hide();
@@ -88,7 +87,7 @@ myGame.spinReels = function () {
     $(".welcome").hide();
     $(".btn-play").hide();
     $(".btn-stop").show();
-    credits-=2;
+    credits -= 2;
     round++;
     $(".btn-round-container").html(`<p class="btn-round"></p>`);
     $(".btn-round").html(`ROUND: <span class="digital">${round}</span>`);
@@ -168,7 +167,7 @@ myGame.stopReels = function () {
       image_url_2 === myGame.images[8] ||
       image_url_3 === myGame.images[8]
     ) {
-      credits+=2;
+      credits += 2;
       myGame.sounds[0].play();
       $(".btn-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
@@ -186,14 +185,17 @@ myGame.stopReels = function () {
     }
 
     if (credits === 0) {
-      credits += 10;
+      credits += 2;
       $(".btn-play").hide();
       $(".btm-stop").hide();
       $(".buttons-container").hide();
       $(".welcome-image").hide();
       $(".welcome")
         .append(
-          `<button class='btn-addCredits'> GAME OVER BUY MORE CREDITS</button>`
+          `<div class='game-over-container'>
+            <p class='game-over'>GAME OVER</p>
+            <button class='btn-addCredits'>BUY MORE CREDITS</button>
+          </div>`
         )
         .show()
         .on("click", function () {

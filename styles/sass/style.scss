@@ -215,6 +215,13 @@ footer {
   align-items: center;
 }
 
+.game-over-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 @media (max-width: 730px) {
   main {
     // height: ;
