@@ -41,7 +41,7 @@ button {
 }
 
 button {
-  border: 5px solid $red;
+  border: 2px solid $red;
   font-family: Arial, Helvetica, sans-serif;
   width: 25%;
   height: 14vw;
@@ -55,7 +55,7 @@ button {
   margin: 30px 0;
 
   &:active {
-    border: 5px solid $pink;
+    border: 2px solid $pink;
     background-color: $grey;
     box-shadow: 0 5px $black;
     transform: translateY(4px);
@@ -86,14 +86,15 @@ header {
   div {
     display: flex;
     justify-content: center;
-    background-color: $black;
+    // background-color: $black;
 
     h1 {
       text-align: center;
       font-family: "Orbitron";
       letter-spacing: 4px;
+      line-height: 65px;
       font-size: 3rem;
-      padding: 25px 0;
+      padding: 20px 0;
       width: 500px;
       span {
         color: $red;
@@ -142,7 +143,7 @@ main {
 
     .btn-stop,
     .btn-play {
-      border: 5px solid $red;
+      border: 2px solid $red;
       height: 100px;
       border-radius: 50px;
       font-family: "Orbitron";
@@ -171,7 +172,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 5px solid $black;
+        border: 2px solid $black;
         width: 180px;
         height: 14vw;
         min-height: 50px;
@@ -215,7 +216,7 @@ main {
     .btn-paid {
       background-color: #dadad4;
       color: $black;
-      border: 5px solid $black;
+      border: 2px solid $black;
       border-radius: 10px;
       font-weight: bold;
 

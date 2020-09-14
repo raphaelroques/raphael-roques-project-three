@@ -268,7 +268,7 @@ button {
 }
 
 button {
-  border: 5px solid #ff0a47;
+  border: 2px solid #ff0a47;
   font-family: Arial, Helvetica, sans-serif;
   width: 25%;
   height: 14vw;
@@ -284,7 +284,7 @@ button {
 }
 
 button:active {
-  border: 5px solid #dc326d;
+  border: 2px solid #dc326d;
   background-color: #68685f;
   -webkit-box-shadow: 0 5px #2b2a27;
           box-shadow: 0 5px #2b2a27;
@@ -326,15 +326,15 @@ header div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #2b2a27;
 }
 
 header div h1 {
   text-align: center;
   font-family: "Orbitron";
   letter-spacing: 4px;
+  line-height: 65px;
   font-size: 3rem;
-  padding: 25px 0;
+  padding: 20px 0;
   width: 500px;
 }
 
@@ -408,7 +408,7 @@ main .buttons-container button {
 
 main .buttons-container .btn-stop,
 main .buttons-container .btn-play {
-  border: 5px solid #ff0a47;
+  border: 2px solid #ff0a47;
   height: 100px;
   border-radius: 50px;
   font-family: "Orbitron";
@@ -462,7 +462,7 @@ main .welcome .game-over-container p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 5px solid #2b2a27;
+  border: 2px solid #2b2a27;
   width: 180px;
   height: 14vw;
   min-height: 50px;
@@ -520,7 +520,7 @@ main .score-container .btn-round,
 main .score-container .btn-paid {
   background-color: #dadad4;
   color: #2b2a27;
-  border: 5px solid #2b2a27;
+  border: 2px solid #2b2a27;
   border-radius: 10px;
   font-weight: bold;
 }
