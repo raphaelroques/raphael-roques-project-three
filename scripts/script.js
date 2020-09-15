@@ -1,6 +1,6 @@
 const myGame = {};
 
-let credits = 2;
+let credits = 50;
 let round = 0;
 
 //create an array to hold all random image urls
@@ -207,7 +207,7 @@ myGame.stopReels = function () {
     }
 
     if (credits === 0) {
-      credits += 2;
+      credits += 10;
       $(".btn-play").hide();
       $(".btm-stop").hide();
       $(".buttons-container").hide();
