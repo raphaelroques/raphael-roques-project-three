@@ -1,6 +1,6 @@
 const myGame = {};
 
-let credits = 50;
+let credits = 20;
 let round = 0;
 
 myGame.images = [
