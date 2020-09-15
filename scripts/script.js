@@ -30,7 +30,7 @@ myGame.starter = function () {
   $(".buttons-container").hide();
   $(".score-container").hide();
   $(".pay-table-container").hide();
-  $(".page-container").hide();
+  $(".reels-container").hide();
   $(".btn-stop").hide();
   $(".pay-table-image").hide();
 };
@@ -61,7 +61,7 @@ myGame.volume = function () {
 myGame.payTable = function () {
   $(".pay-table-btn").on("click", function () {
     $(".pay-table-image").toggle();
-    $(".page-container").toggle();
+    $(".reels-container").toggle();
     $(".buttons-container").toggle();
     $(".score-container").toggle();
     $(".game-over-container").toggle();
@@ -75,7 +75,7 @@ myGame.start = function () {
     $(".buttons-container").show();
     $(".score-container").show();
     $(".pay-table-container").show();
-    $(".page-container").show();
+    $(".reels-container").show();
     $("#random-image-1").attr("src", myGame.images[8]);
     $("#random-image-2").attr("src", myGame.images[8]);
     $("#random-image-3").attr("src", myGame.images[8]);
