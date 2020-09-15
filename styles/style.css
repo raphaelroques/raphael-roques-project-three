@@ -522,9 +522,9 @@ main .score-container div p {
           align-items: center;
 }
 
-main .score-container .btn-credits,
-main .score-container .btn-round,
-main .score-container .btn-paid {
+main .score-container .score-credits,
+main .score-container .score-round,
+main .score-container .score-paid {
   background-color: #dadad4;
   color: #2b2a27;
   border: 2px solid #2b2a27;
@@ -532,9 +532,9 @@ main .score-container .btn-paid {
   font-weight: bold;
 }
 
-main .score-container .btn-credits .digital,
-main .score-container .btn-round .digital,
-main .score-container .btn-paid .digital {
+main .score-container .score-credits .digital,
+main .score-container .score-round .digital,
+main .score-container .score-paid .digital {
   font-family: "Orbitron";
   font-weight: bolder;
   font-size: 4rem;
@@ -561,19 +561,22 @@ footer {
   font-size: 1.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
   body {
     font-size: 1.5rem;
   }
   .wrapper {
     width: 95%;
   }
-  main {
-    min-height: 700px;
+  button.volume-on, button.volume-off {
+    font-size: 2rem;
   }
-  main .score-container .btn-credits .digital,
-  main .score-container .btn-round .digital,
-  main .score-container .btn-paid .digital {
+  main {
+    min-height: 750px;
+  }
+  main .score-container .score-credits .digital,
+  main .score-container .score-round .digital,
+  main .score-container .score-paid .digital {
     font-size: 3rem;
   }
 }
@@ -585,6 +588,9 @@ footer {
   .wrapper {
     width: 98%;
   }
+  button.volume-on, button.volume-off {
+    font-size: 1.5rem;
+  }
   header div h1 {
     font-size: 2.5rem;
   }
@@ -594,9 +600,25 @@ footer {
   main {
     min-height: 600px;
   }
-  main .score-container .btn-credits .digital,
-  main .score-container .btn-round .digital,
-  main .score-container .btn-paid .digital {
+  main .score-container div {
+    height: 80px;
+  }
+  main .score-container div p {
+    height: 80px;
+    line-height: 25px;
+  }
+  main .score-container .score-credits .digital,
+  main .score-container .score-round .digital,
+  main .score-container .score-paid .digital {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  header div h1 {
+    font-size: 2rem;
+  }
+  header div h1 span {
+    font-size: 3.5rem;
   }
 }

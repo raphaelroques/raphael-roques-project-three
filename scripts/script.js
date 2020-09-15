@@ -84,7 +84,7 @@ myGame.start = function () {
 };
 
 myGame.displayGame = function () {
-  $(".btn-credits").html(
+  $(".score-credits").html(
     `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
   );
   myGame.payTable();
@@ -97,7 +97,7 @@ myGame.addCredits = function () {
     $(".game-over").hide();
     $(".welcome").hide();
     $(".buttons-container").show();
-    $(".btn-credits").html(
+    $(".score-credits").html(
       `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
     );
     $(".btn-play").show();
@@ -111,9 +111,9 @@ myGame.spinReels = function () {
     $(".btn-stop").show();
     credits -= 2;
     round++;
-    $(".btn-round-container").html(`<p class="btn-round"></p>`);
-    $(".btn-round").html(`ROUND: <span class="digital">${round}</span>`);
-    $(".btn-credits").html(
+    $(".score-round-container").html(`<p class="score-round"></p>`);
+    $(".score-round").html(`ROUND: <span class="digital">${round}</span>`);
+    $(".score-credits").html(
       `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
     );
     $("#random-image-1").attr("src", "./images/gif1.gif");
@@ -143,20 +143,20 @@ myGame.stopReels = function () {
     ) {
       credits += 30;
       myGame.sounds[4].play();
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">30</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">30</span></p>`
       );
     } else if (image_url_1 === image_url_2 && image_url_1 === image_url_3) {
       credits += 20;
       myGame.sounds[3].play();
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">20</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">20</span></p>`
       );
     } else if (
       (image_url_1 === image_url_2 && image_url_1 === myGame.images[8]) ||
@@ -165,11 +165,11 @@ myGame.stopReels = function () {
     ) {
       credits += 6;
       myGame.sounds[2].play();
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">06</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">06</span></p>`
       );
     } else if (
       image_url_1 === image_url_2 ||
@@ -178,11 +178,11 @@ myGame.stopReels = function () {
     ) {
       credits += 4;
       myGame.sounds[1].play();
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">04</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">04</span></p>`
       );
     } else if (
       image_url_1 === myGame.images[8] ||
@@ -191,18 +191,18 @@ myGame.stopReels = function () {
     ) {
       credits += 2;
       myGame.sounds[0].play();
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">02</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">02</span></p>`
       );
     } else {
-      $(".btn-credits").html(
+      $(".score-credits").html(
         `<p>YOUR CREDITS: <span class="digital">${credits}</span></p>`
       );
-      $(".btn-paid-container").html(
-        `<p class='btn-paid'>WINNER PAID: <span class="digital">00</span></p>`
+      $(".score-paid-container").html(
+        `<p class='score-paid'>WINNER PAID: <span class="digital">00</span></p>`
       );
     }
 
