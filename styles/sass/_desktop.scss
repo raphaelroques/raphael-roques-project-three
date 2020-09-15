@@ -30,6 +30,10 @@ button {
   padding: 0;
 }
 
+a {
+  text-emphasis: none;
+}
+
 button {
   border: 2px solid $red;
   font-family: Arial, Helvetica, sans-serif;
@@ -239,8 +243,12 @@ footer {
   background: $black;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top: 2px solid $red;
   font-size: 1.5rem;
+  a {
+    color: rgb(255, 17, 0);
+  }
 }
