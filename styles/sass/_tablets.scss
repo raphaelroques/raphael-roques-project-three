@@ -1,0 +1,30 @@
+@media (max-width: 780px) {
+  body {
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    width: 95%;
+  }
+
+  button {
+    &.volume-on,
+    &.volume-off {
+      font-size: 2rem;
+    }
+  }
+
+  main {
+    min-height: 750px;
+
+    .score-container {
+      .score-credits,
+      .score-round,
+      .score-paid {
+        .digital {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
