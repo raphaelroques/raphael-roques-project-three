@@ -3,7 +3,6 @@ const myGame = {};
 let credits = 50;
 let round = 0;
 
-//create an array to hold all random image urls
 myGame.images = [
   "./images/image1.jpg",
   "./images/image2.jpg",
